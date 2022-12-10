@@ -1,0 +1,44 @@
+-----------------------------------------------------------------------------------------------
+clone project
+        ->whatsup
+       ->zoom clone
+WEB DEV SIMPLIFY utube
+------------------------------------------------------------------------------------------------
+
+
+---------------app.js--------------
+const express = require("express");
+const app =express();
+const port =process.env.PORT || 3000;
+// require("./db/conn");
+
+app.get("/", (req, res) =>{
+    res.send("hello bhosdiwalo");
+})
+
+
+
+
+
+
+app.listen(port,() => {
+    console.log(`server is running on port no ${port}`)
+
+})
+
+----------------------------conn.js------------------------
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/registration", {
+    
+    // useNewUrlParser:true,
+    // useUnifiedTopology:true,
+    // useCreateIndex:true
+
+}).then(()=>{
+    console.log("connnections is sucessfull");
+}).catch((e)=>{
+    console.log("Fail to connect");
+})
+
+-------------api-------------
+https://api.openweathermap.org/data/2.5/weather?lat=23.0225&lon=72.5714&appid=f5ec65e193d19daa8a5fecd74c4f0567
